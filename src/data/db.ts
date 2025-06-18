@@ -16,7 +16,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2012",
         company:"A-1 Pictures",
         img:"https://cdn.myanimelist.net/images/characters/15/262053.jpg",
-        level: 875
+        level: 500
     },{
         id:2,
         name:"Rin Toosaka",
