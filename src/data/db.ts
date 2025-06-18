@@ -1,4 +1,4 @@
-type WaifubotDBType = {
+export type WaifubotDBType = {
     id: number
     name: string
     anime: string

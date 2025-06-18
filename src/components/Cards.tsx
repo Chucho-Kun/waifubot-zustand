@@ -1,10 +1,11 @@
 import { WaifubotDB } from "../data/db"
 
-export default function Cards() {
+export default function Cards( { anime } ) {
 
   return (
        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
       {WaifubotDB.map((waifu, i) => (
+        ( anime === 'TODOS' || waifu.anime === anime) &&
         <div key={i} className="bg-white rounded shadow p-6 flex flex-row items-center cursor-pointer">
           {/* Imagen a la izquierda, ocupa el alto de la tarjeta */}
           <div className="w-24 h-32 bg-gray-200 rounded-md overflow-hidden flex-shrink-0 flex items-center justify-center mr-4">
