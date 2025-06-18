@@ -1,6 +1,11 @@
 import { WaifubotDB } from "../data/db";
+import { type Dispatch } from "react";
 
-export default function Carrusel( { setAnime } ) {
+type CarruselProps = {
+    setAnime:Dispatch<React.SetStateAction<string>>
+}
+
+export default function Carrusel( { setAnime } : CarruselProps  ) {
 
     const animes = WaifubotDB.filter( ( waifu , index , self ) => self.findIndex( w => w.anime === waifu.anime ) === index)
     

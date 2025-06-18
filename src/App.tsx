@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Cards from "./components/Cards";
 import Carrusel from "./components/Carrusel";
+import Ordenados from './components/Ordenados';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
         </button>
      </div>
      </div>
+     <div className='text-center p-10 font-bold'>ANIMES ORDENADOS POR TIEMPO</div>
+      <Ordenados />
     </>
   )
 }

@@ -1,6 +1,10 @@
 import { WaifubotDB } from "../data/db"
 
-export default function Cards( { anime } ) {
+type CardsProps = {
+    anime : string
+}
+
+export default function Cards( { anime } : CardsProps ) {
 
   return (
        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
@@ -10,7 +14,7 @@ export default function Cards( { anime } ) {
           {/* Imagen a la izquierda, ocupa el alto de la tarjeta */}
           <div className="w-24 h-32 bg-gray-200 rounded-md overflow-hidden flex-shrink-0 flex items-center justify-center mr-4">
             <img
-              src="src/assets/react.svg"
+              src={waifu.img}
               alt={waifu.name}
               className="object-cover w-full h-full"
             />
