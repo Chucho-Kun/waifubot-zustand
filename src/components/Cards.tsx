@@ -1,16 +1,32 @@
-import { WaifubotDB } from "../data/db"
+import { WaifubotDB, type WaifubotDBType } from "../data/db"
+import { type Dispatch } from "react"
 
 type CardsProps = {
     anime : string
+    setCharacter : Dispatch<React.SetStateAction<WaifubotDBType[]>>
+    level : number
+    character: WaifubotDBType[]
 }
 
-export default function Cards( { anime } : CardsProps ) {
+export default function Cards( { anime , setCharacter , level , character } : CardsProps ) {
+
+    const elegida = character.length > 0 ? character[0] : { id: 0, name: '', anime: '', year: '', company: '', img: '', level: 0 } 
+
+    const handleCharacter = ( idWaifu : number ) => {
+        const waifuData = WaifubotDB.map( waifu => idWaifu === waifu.id ? waifu : null ).filter( waifu => waifu !== null ) 
+        setCharacter( waifuData )
+    }
 
   return (
        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
       {WaifubotDB.map((waifu, i) => (
         ( anime === 'TODOS' || waifu.anime === anime) &&
-        <div key={i} className="bg-white rounded shadow p-6 flex flex-row items-center cursor-pointer">
+        <button 
+            key={i} 
+            disabled={waifu.level > level}
+            className={` ${ elegida.id == waifu.id ? 'bg-gray-100' : 'bg-white' }  rounded shadow p-6 flex flex-row items-center ${ waifu.level > level ? 'opacity-30 cursor-default' : 'cursor-pointer hover:bg-gray-100 transition-colors' }`} 
+            onClick={() => handleCharacter( waifu.id )} // Aquí puedes manejar el click para seleccionar la waifu
+            >
           {/* Imagen a la izquierda, ocupa el alto de la tarjeta */}
           <div className="w-24 h-32 bg-gray-200 rounded-md overflow-hidden flex-shrink-0 flex items-center justify-center mr-4">
             <img
@@ -25,7 +41,7 @@ export default function Cards( { anime } : CardsProps ) {
             <h2 className="text-black">{waifu.anime}</h2>
             <p className="text-gray-500 italic">{waifu.company} - {waifu.year}</p>
           </div>
-        </div>
+        </button>
       ))}
     </div>
   )
