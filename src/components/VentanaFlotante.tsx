@@ -1,13 +1,10 @@
-import type { WaifubotDBType } from "../data/db";
+import { useWaifuStore } from "../store";
 
-type VentanaFlotanteProps = {
-    visible: boolean
-    onClose: () => void
-    character: WaifubotDBType[]
-}
+export default function VentanaFlotante() {
 
-export default function VentanaFlotante({ visible, onClose , character } : VentanaFlotanteProps) {
-  if (!visible) return null;
+    const { modal , setModal , currentWaifu } = useWaifuStore()
+
+  if (!modal) return null;
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-40 flex items-center justify-center z-50">
@@ -15,13 +12,13 @@ export default function VentanaFlotante({ visible, onClose , character } : Venta
         {/* Botón de cerrar */}
         <button
           className="absolute top-2 right-2 text-white hover:text-red-300 text-2xl cursor-pointer bg-red-900 rounded-full w-8 h-8"
-          onClick={onClose}
+          onClick={() => setModal( false )}
         >
           ×
         </button>
         {/* Fichas encontradas */}
         <div className="flex">
-            { character.map( waifu => (
+            { currentWaifu.map( waifu => (
                 <div key={waifu.id} className="flex flex-col items-center bg-pink-100 rounded-xl p-4 border-b-2 border-white">
                     <img
                     src={ waifu.img }

@@ -1,20 +1,16 @@
-import { WaifubotDB, type WaifubotDBType } from "../data/db"
-import { type Dispatch } from "react"
+import { WaifubotDB } from "../data/db"
+import { useWaifuStore } from "../store"
 
-type CardsProps = {
-    anime : string
-    setCharacter : Dispatch<React.SetStateAction<WaifubotDBType[]>>
-    level : number
-    character: WaifubotDBType[]
-}
 
-export default function Cards( { anime , setCharacter , level , character } : CardsProps ) {
+export default function Cards() {
+    
+    const { anime , level , currentWaifu , addCurrentWaifu } = useWaifuStore()
 
-    const elegida = character.length > 0 ? character[0] : { id: 0, name: '', anime: '', year: '', company: '', img: '', level: 0 } 
+    const elegida = currentWaifu.length ? currentWaifu[0] : { id: 0, name: '', anime: '', year: '', company: '', img: '', level: 0 } 
 
     const handleCharacter = ( idWaifu : number ) => {
         const waifuData = WaifubotDB.map( waifu => idWaifu === waifu.id ? waifu : null ).filter( waifu => waifu !== null ) 
-        setCharacter( waifuData )
+        addCurrentWaifu( waifuData )
     }
 
   return (

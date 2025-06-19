@@ -1,21 +1,13 @@
 import { WaifubotDB } from "../data/db";
-import { type Dispatch } from "react";
+import { useWaifuStore } from "../store";
 
-type CarruselProps = {
-    setAnime:Dispatch<React.SetStateAction<string>>
-    level: number
-}
+export default function Carrusel() {
 
-export default function Carrusel( { setAnime , level } : CarruselProps  ) {
+    const setAnime = useWaifuStore( state => state.setAnime ) 
+    const level = useWaifuStore( state => state.level )
 
     const animes = WaifubotDB.filter( ( waifu , index , self ) => self.findIndex( w => w.anime === waifu.anime ) === index)
     const animesbyYear = animes.sort( (a,b) => Number(a.year) - Number(b.year) )
-
-    console.log( {animesbyYear} )
-
-    const handleAnime = ( anime : string ) => {
-        setAnime( anime )
-    };
 
 
   return (
@@ -26,7 +18,7 @@ export default function Carrusel( { setAnime , level } : CarruselProps  ) {
           <button
             key={ anime.id }
             className="min-w-[220px] bg-white rounded shadow p-6 flex-shrink-0 cursor-pointer hover:bg-gray-100 transition-colors"
-            onClick={() => handleAnime( anime.anime )}    
+            onClick={() => setAnime( anime.anime )}    
           >
             <h2 className="text-xl font-bold mb-2">{ anime.anime }</h2>
             <p className="text-white bg-amber-700">{ anime.year}</p>
