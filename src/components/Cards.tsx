@@ -1,22 +1,21 @@
-import { WaifubotDB } from "../data/db"
 import { useWaifuStore } from "../store"
 
 
 
 export default function Cards() {
     
-    const { anime , currentWaifu , addCurrentWaifu } = useWaifuStore()
+    const { anime , currentWaifu , addCurrentWaifu , waifuListFull } = useWaifuStore()
 
     const elegida = currentWaifu.length ? currentWaifu[0] : { id: 0, name: '', anime: '', year: '', company: '', img: '', level: 0 } 
 
     const handleCharacter = ( idWaifu : number ) => {
-        const waifuData = WaifubotDB.map( waifu => idWaifu === waifu.id ? waifu : null ).filter( waifu => waifu !== null ) 
+        const waifuData = waifuListFull.map( waifu => idWaifu === waifu.id ? waifu : null ).filter( waifu => waifu !== null ) 
         addCurrentWaifu( waifuData )
     }
 
   return (
        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-      {WaifubotDB.map((waifu, i) => (
+      {waifuListFull.map((waifu, i) => (
         ( anime === 'TODOS' || waifu.anime === anime) &&
         <button 
             key={i} 
