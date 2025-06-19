@@ -18,12 +18,12 @@ useEffect( () => {
   return (
     <>
      <div className="text-3xl text-center bg-pink-700 p-10 text-white font-black">WAIFU BATTLE VS</div>
-     <h2 className="text-2xl text-black font-bold p-4 ">Selecciona un personaje de estos animes:</h2>
+     <h2 className="text-2xl text-black font-bold p-4 ">Selecciona una Waifu disponible:</h2>
      <Carrusel />
 
      <Cards />
 
-  <div className="container mx-auto">
+  {/*<div className="container mx-auto">
      <div className='flex justify-center items-center'>
         <button 
           disabled={ allWaifus }
@@ -32,7 +32,7 @@ useEffect( () => {
           >VER TODAS LAS WAIFUS
         </button>
      </div>
-     </div> 
+  </div>  */}
 
       <VentanaFlotante />
 

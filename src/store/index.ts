@@ -28,19 +28,21 @@ export const useWaifuStore = create<WaifuState>()(
     addCurrentWaifu: ( currentWaifu ) => {
         set( { currentWaifu } )
         toast.success( `Has seleccionado a ${ currentWaifu[0].name }!` , {
-            position: 'bottom-left',
+            position: 'top-center',
             theme: "dark",
-            autoClose: 2000
+            autoClose: 2000,
+            hideProgressBar: true
         })
     },
     modal: false,
     setModal: ( modal ) => {
         set( { modal } )
         if( modal ){
-            toast.warning( 'Elije una casilla!' ,{
-                position: 'bottom-center',
+            toast.warning( 'Elije una de las casillas de tu Waifu!' ,{
+                position: 'top-left',
                 theme: "dark",
-                autoClose: 3000
+                autoClose: 3000,
+                hideProgressBar: true
             })
         }
     },

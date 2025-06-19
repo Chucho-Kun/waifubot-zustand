@@ -1,4 +1,5 @@
 import { useWaifuStore } from "../store";
+import GameNumbers from "./GameNumbers";
 
 export default function VentanaFlotante() {
 
@@ -6,10 +7,6 @@ export default function VentanaFlotante() {
     const hiddenWaifus = waifuListFull.filter( waifu => !waifu.seleccionable )
     const sortbyLevel = hiddenWaifus.sort( (a,b) => a.level - b.level )
     const rival = sortbyLevel[0]
-
-    const handleGame = ( opcion : string) => {
-      console.log('**', opcion);
-    }
 
   if (!modal) return null;
 
@@ -50,80 +47,10 @@ export default function VentanaFlotante() {
 
         <div className="flex justify-between items-center w-full">
 
-                <div className="flex flex-col w-full items-center bg-pink-100 rounded-xl p-4 border-b-2 border-white">
-                    
-                    <div className="flex justify-center">
-                    <table className="border-collapse">
-                      <tbody>
-                        <tr>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "1" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "2" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "3" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>
-
-                </div>
+                <GameNumbers  />
           
 
-                <div className="flex flex-col w-full items-center bg-pink-100 rounded-xl p-4 border-b-2 border-white">
-                    
-                    <div className="flex justify-center">
-                    <table className="border-collapse">
-                      <tbody>
-                        <tr>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "1" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "2" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                          <td className="border border-gray-400 px-8 py-4 text-xl font-bold text-center">
-                            <input className="w-1/3 text-center cursor-pointer bg-blue-300 text-black font-bold"
-                              onClick={() => handleGame( "3" )}
-                              value='X'          
-                              type="text"
-                              placeholder="x"          
-                              />
-                          </td>
-                        </tr>
-                      </tbody>
-                    </table>
-                </div>
-
-                </div>
+                
 
         </div>
 
