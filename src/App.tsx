@@ -3,6 +3,8 @@ import Cards from "./components/Cards";
 import Carrusel from "./components/Carrusel";
 import VentanaFlotante from './components/VentanaFlotante';
 import { useWaifuStore } from './store';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
@@ -50,6 +52,9 @@ useEffect( () => {
         </button> */}
 
     </div>
+    
+    <ToastContainer />
+
     </>
   )
 }

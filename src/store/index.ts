@@ -1,5 +1,7 @@
 import { create } from "zustand";
 import type { WaifubotDBType } from "../data/db";
+import { toast } from "react-toastify";
+import { devtools } from "zustand/middleware";
 
  export type WaifuState = {
     anime: string
@@ -14,7 +16,8 @@ import type { WaifubotDBType } from "../data/db";
     setAllWaifus: ( allWaifus : boolean ) => void
 }
 
-export const useWaifuStore = create<WaifuState>( ( set ) => ({
+export const useWaifuStore = create<WaifuState>()(
+    devtools( ( set ) => ({
     anime: '',
     setAnime: ( anime ) => {
         set( { anime } )
@@ -22,12 +25,17 @@ export const useWaifuStore = create<WaifuState>( ( set ) => ({
     currentWaifu: [],
     addCurrentWaifu: ( currentWaifu ) => {
         set( { currentWaifu } )
+        toast.success( `Has seleccionado a ${ currentWaifu[0].name }!` , {
+            position: "top-center",
+            theme: "dark",
+            autoClose: 3000
+        })
     },
     modal: false,
     setModal: ( modal ) => {
         set( { modal } )
     },
-    level: 680,
+    level: 900, //680
     setLevel: ( level ) => {
         set( { level } )
     },
@@ -35,7 +43,7 @@ export const useWaifuStore = create<WaifuState>( ( set ) => ({
     setAllWaifus: ( allWaifus ) => {
         set( { allWaifus } )
     }
-}) )
+}) ))
 
 
 

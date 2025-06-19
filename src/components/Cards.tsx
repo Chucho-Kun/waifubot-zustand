@@ -2,9 +2,10 @@ import { WaifubotDB } from "../data/db"
 import { useWaifuStore } from "../store"
 
 
+
 export default function Cards() {
     
-    const { anime , level , currentWaifu , addCurrentWaifu } = useWaifuStore()
+    const { anime , currentWaifu , addCurrentWaifu } = useWaifuStore()
 
     const elegida = currentWaifu.length ? currentWaifu[0] : { id: 0, name: '', anime: '', year: '', company: '', img: '', level: 0 } 
 
@@ -19,8 +20,8 @@ export default function Cards() {
         ( anime === 'TODOS' || waifu.anime === anime) &&
         <button 
             key={i} 
-            disabled={waifu.level > level}
-            className={` ${ elegida.id == waifu.id ? 'bg-gray-100' : 'bg-white' }  rounded shadow p-6 flex flex-row items-center ${ waifu.level > level ? 'opacity-30 cursor-default' : 'cursor-pointer hover:bg-gray-100 transition-colors' }`} 
+            disabled={!waifu.seleccionable}
+            className={` ${ elegida.id == waifu.id ? 'bg-gray-100' : 'bg-white' }  rounded shadow p-6 flex flex-row items-center ${ !waifu.seleccionable ? 'opacity-30 cursor-default' : 'cursor-pointer hover:bg-gray-100 transition-colors' }`} 
             onClick={() => handleCharacter( waifu.id )} // Aquí puedes manejar el click para seleccionar la waifu
             >
           {/* Imagen a la izquierda, ocupa el alto de la tarjeta */}
