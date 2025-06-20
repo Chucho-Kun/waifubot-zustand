@@ -4,9 +4,14 @@ import GameNumbers from "./GameNumbers";
 export default function VentanaFlotante() {
 
     const { modal , setModal , currentWaifu , waifuListFull } = useWaifuStore()
+
+    
     const hiddenWaifus = waifuListFull.filter( waifu => !waifu.seleccionable )
     const sortbyLevel = hiddenWaifus.sort( (a,b) => a.level - b.level )
     const rival = sortbyLevel[0]
+
+    //const { setChallenger } = useWaifuStore()
+    //setChallenger( rival.name )
 
   if (!modal) return null;
 
@@ -47,10 +52,7 @@ export default function VentanaFlotante() {
 
         <div className="flex justify-between items-center w-full">
 
-                <GameNumbers  />
-          
-
-                
+                <GameNumbers  waifuLevel={ currentWaifu[0].level } rivalLevel={ rival.level }  rivalId={ rival.id } rivalName={ rival.name }  rivalImg={ rival.img} />
 
         </div>
 

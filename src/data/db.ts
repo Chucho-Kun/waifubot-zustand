@@ -17,7 +17,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2012",
         company:"A-1 Pictures",
         img:"https://cdn.myanimelist.net/images/characters/9/192515.jpg",
-        level: 480,
+        level: 481,
         seleccionable:true
     },{
         id:2,
@@ -26,7 +26,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2006",
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/2/270529.jpg",
-        level: 860,
+        level: 861,
         seleccionable:false
     },{
         id:3,
@@ -44,7 +44,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2009",
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/11/48547.jpg",
-        level: 820,
+        level: 821,
         seleccionable:false
     },{
         id:5,
@@ -62,7 +62,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2016",
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/14/282523.jpg",
-        level: 800,
+        level: 820,
         seleccionable:false
     },{
         id:7,
@@ -89,7 +89,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2016",
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/14/266229.jpg",
-        level: 800,
+        level: 840,
         seleccionable:true
     },{
         id:10,
@@ -233,7 +233,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2012",
         company:"A-1 Pictures",
         img:"https://cdn.myanimelist.net/images/characters/15/262053.jpg",
-        level: 700,
+        level: 790,
         seleccionable:false
     },{
         id:26,
@@ -242,7 +242,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2009",
         company:"A-1 Pictures",
         img:"https://cdn.myanimelist.net/images/characters/13/81112.jpg",
-        level: 800,
+        level: 805,
         seleccionable:false
     },{
         id:27,
@@ -251,7 +251,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2009",
         company:"A-1 Pictures",
         img:"https://cdn.myanimelist.net/images/characters/15/55106.jpg",
-        level: 600,
+        level: 602,
         seleccionable:true
     },{
         id:28,
@@ -269,7 +269,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2006",
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/14/346384.jpg",
-        level: 600,
+        level: 608,
         seleccionable:true
     },{
         id:30,
@@ -278,7 +278,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2006",
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/6/275276.jpg",
-        level: 900,
+        level: 903,
         seleccionable:false
     },{
         id:31,
@@ -287,7 +287,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2006",
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/12/75529.jpg",
-        level: 700,
+        level: 730,
         seleccionable:false
     },{
         id:32,
@@ -323,7 +323,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         year:"2017",
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/2/322173.jpg",
-        level: 800,
+        level: 830,
         seleccionable:false
     },{
         id:36,

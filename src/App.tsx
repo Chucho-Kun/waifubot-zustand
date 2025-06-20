@@ -18,7 +18,7 @@ useEffect( () => {
   return (
     <>
      <div className="text-3xl text-center bg-pink-700 p-10 text-white font-black">WAIFU BATTLE VS</div>
-     <h2 className="text-2xl text-black font-bold p-4 ">Selecciona una Waifu disponible:</h2>
+     <h2 className="text-2xl text-black font-bold p-4 ">Selecciona una Waifu de estos animes:</h2>
      <Carrusel />
 
      <Cards />
@@ -41,7 +41,7 @@ useEffect( () => {
           disabled={currentWaifu.length < 1}
           className={`mb-20 rounded-xl p-3 text-white uppercase font-bold w-2xl ${ currentWaifu.length < 1 ? 'opacity-50 cursor-default bg-gray-600' : 'cursor-pointer bg-indigo-600 hover:bg-indigo-700 transition-colors' }`}
           onClick={ () => setModal( true ) }
-          >IR A LA PELEA
+          >{ currentWaifu.length < 1 ? 'selecciona una waifu' : 'UNA NUEVA WAIFU TE RETA A DUELO' }
         </button>
 
 

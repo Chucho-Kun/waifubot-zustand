@@ -5,21 +5,32 @@ import { devtools } from "zustand/middleware";
 
  export type WaifuState = {
     waifuListFull: WaifubotDBType[]
+    setWaifuList: ( id : number ) => void
     anime: string
     setAnime: ( anime : string ) => void
     currentWaifu: WaifubotDBType[]
     addCurrentWaifu: ( waifu : WaifubotDBType[]) => void
+    resetCurrentWaifu: () => void
     modal: boolean
     setModal: ( estado : boolean ) => void
     level: number,
     setLevel: ( level : number ) => void
     allWaifus: boolean
     setAllWaifus: ( allWaifus : boolean ) => void
+    challenger: string
+    setChallenger: ( challenger : string ) => void
+    rival: WaifubotDBType[]
+    setRival: () => void
 }
 
 export const useWaifuStore = create<WaifuState>()(
     devtools( ( set ) => ({
     waifuListFull: WaifubotDB,
+    setWaifuList: ( id ) => {
+        set( ( state ) => ({
+            waifuListFull: state.waifuListFull.map( waifu => waifu.id === id ? { ...waifu , seleccionable: true } : waifu )
+        })) 
+    },
     anime: '',
     setAnime: ( anime ) => {
         set( { anime } )
@@ -33,6 +44,9 @@ export const useWaifuStore = create<WaifuState>()(
             autoClose: 2000,
             hideProgressBar: true
         })
+    },
+    resetCurrentWaifu: () => {
+        set( { currentWaifu : [] } )
     },
     modal: false,
     setModal: ( modal ) => {
@@ -53,9 +67,23 @@ export const useWaifuStore = create<WaifuState>()(
     allWaifus: false,
     setAllWaifus: ( allWaifus ) => {
         set( { allWaifus } )
+    },
+    challenger: 'x',
+    setChallenger: ( challenger ) => {
+        set( { challenger } )
+    },
+    rival:[],
+    setRival: () => {
+        
+        /*const hiddenWaifus = get().waifuListFull.filter( waifu => !waifu.seleccionable )
+        const sortbyLevel = hiddenWaifus.sort( (a,b) => a.level - b.level )
+        set({ rival : [sortbyLevel[0]]}) */
     }
 }) ))
 
 
-
+/*const hiddenWaifus = waifuListFull.filter( waifu => !waifu.seleccionable )
+    const sortbyLevel = hiddenWaifus.sort( (a,b) => a.level - b.level )
+    const rival = sortbyLevel[0]
+     */
   //const [ allWaifus , setAllWaifus ] = useState( false )
