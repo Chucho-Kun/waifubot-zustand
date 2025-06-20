@@ -45,8 +45,14 @@ export default function GameNumbers( { waifuLevel , rivalLevel , rivalId , rival
 
         if( Number( option ) > Number( result.valor_ ) ){
 
-            toast.success( `${ option } le gana a ${ valor_ } : ¡Excelente la derrotaste!` ,{
-                position: 'top-center',
+            toast.success(
+                <div className="flex items-center gap-4">
+                        <div>
+                        <h1 className="font-bold text-white">{ option } le gana a { valor_ }</h1>
+                        <h3 className="text-sm text-gray-200">¡Excelente la derrotaste!</h3>
+                        </div>
+                    </div> ,{
+                position: 'bottom-left',
                 theme: "dark",
                 autoClose: 2000,
                 hideProgressBar: true
@@ -60,24 +66,30 @@ export default function GameNumbers( { waifuLevel , rivalLevel , rivalId , rival
                 setWaifuList( rivalId )
 
                 toast.success(
-                    <div className="flex items-center gap-4">
+                    <div className="flex items-center gap-4 cursor-pointer" onClick={() => console.log('vivo en la notificacion')}>
                         <img src={ rivalImg } alt="Waifu" className="w-12 rounded-xl" />
                         <div>
                         <div className="font-bold text-white">¡Felicidades!</div>
-                        <div className="text-sm text-gray-200">{ rivalName } ya es una Waifu seleccionable</div>
+                        <div className="text-sm text-gray-200">Ya puedes jugar con { rivalName }</div>
                         </div>
                     </div> ,{
-                    position: 'top-center',
+                    position: 'bottom-center',
                     theme: "dark",
-                    autoClose: 3000,
+                    autoClose: 5000,
                     hideProgressBar: true
                 })
 
             },800)
 
         }else{
-            toast.warning( `${ option } no le gana a ${ valor_ } : Fallaste, prueba otra vez!` ,{
-                position: 'top-center',
+            toast.warning(
+                    <div className="flex items-center gap-4">
+                        <div>
+                        <h1 className="font-bold text-white">{ option } no le gana a { valor_ }</h1>
+                        <h3 className="text-sm text-gray-200">¡Fallaste, prueba otra vez!</h3>
+                        </div>
+                    </div> ,{
+                position: 'bottom-right',
                 theme: "dark",
                 autoClose: 2000,
                 hideProgressBar: true

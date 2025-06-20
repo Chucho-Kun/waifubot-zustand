@@ -36,7 +36,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"White Fox",
         img:"https://cdn.myanimelist.net/images/characters/9/311327.jpg",
         level: 849,
-        seleccionable:true
+        seleccionable:false
     },{
         id:4,
         name:"Mio Akiyama",
@@ -90,7 +90,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/14/266229.jpg",
         level: 840,
-        seleccionable:true
+        seleccionable:false
     },{
         id:10,
         name:"Mami Tomoe",
@@ -171,7 +171,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/8/51210.jpg",
         level: 683,
-        seleccionable:true
+        seleccionable:false
     },{
         id:19,
         name:"Winry Rockbell",
@@ -261,7 +261,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Gainax",
         img:"https://cdn.myanimelist.net/images/characters/15/515181.jpg",
         level: 750,
-        seleccionable:true
+        seleccionable:false
     },{
         id:29,
         name:"Illyasviel von Einzbern",
@@ -270,7 +270,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Studio Deen",
         img:"https://cdn.myanimelist.net/images/characters/14/346384.jpg",
         level: 608,
-        seleccionable:true
+        seleccionable:false
     },{
         id:30,
         name:"Saber",
@@ -297,7 +297,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/11/319309.jpg",
         level: 890,
-        seleccionable:true
+        seleccionable:false
     },{
         id:33,
         name:"Sakura",
@@ -306,7 +306,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Telecom Animation Film",
         img:"https://cdn.myanimelist.net/images/characters/9/529714.jpg",
         level: 684,
-        seleccionable:true
+        seleccionable:false
     },{
         id:34,
         name:"Yoshi",
@@ -333,7 +333,7 @@ export const WaifubotDB : WaifubotDBType[] = [
         company:"Kyoto Animation",
         img:"https://cdn.myanimelist.net/images/characters/4/456446.jpg",
         level: 730,
-        seleccionable:true
+        seleccionable:false
     }
 ]
 
